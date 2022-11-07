@@ -43,28 +43,11 @@
 </template>
 
 <script setup lang="ts">
-import type { IFoodItem } from "@/@type";
-defineProps<{
-  products: IFoodItem[];
-}>();
+import { storeToRefs } from "pinia";
 
-// number | undefined
-</script>
-<script lang="ts">
-// export default {
-//   props: ["products"],
-// };
-// const products = [
-//   {
-//     id: 1,
-//     name: "Basic Tee",
-//     href: "#",
-//     imageSrc:
-//       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-//     imageAlt: "Front of men's Basic Tee in black.",
-//     price: "$35",
-//     color: "Black",
-//   },
-//   // More products...
-// ];
+import { useProductStore } from "@/stores/product";
+
+const productStore = useProductStore();
+
+const { products } = storeToRefs(productStore);
 </script>
