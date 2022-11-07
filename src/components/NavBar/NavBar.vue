@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="sticky top-0 z-30 w-full bg-white">
     <!-- Mobile menu -->
     <TransitionRoot as="template" :show="open">
       <Dialog as="div" class="relative z-40 lg:hidden" @close="open = false">
@@ -42,16 +42,12 @@
               <!-- Links -->
 
               <div class="space-y-6 border-t border-gray-200 py-6 px-4">
-                <div
-                  v-for="page in navigation.categories"
-                  :key="page.name"
-                  class="flow-root"
-                >
+                <div v-for="page in CATEGORY" :key="page" class="flow-root">
                   <a
-                    :href="'#' + page.id"
+                    :href="'#' + page"
                     class="-m-2 block p-2 font-medium text-gray-900"
                     @click="open = false"
-                    >{{ page.name }}</a
+                    >{{ page }}</a
                   >
                 </div>
               </div>
@@ -93,13 +89,14 @@
             </div>
 
             <!-- Flyout menus -->
-            <PopoverGroup class="hidden lg:mr-8 lg:block lg:self-stretch">
-              <div class="flex h-full space-x-8">
+            <PopoverGroup class="hidden lg:px-4 lg:block lg:self-stretch">
+              <div class="flex h-full">
                 <a
                   v-for="page in navigation.categories"
                   :key="page.name"
                   :href="'#' + page.id"
-                  class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                  class="flex lg:px-4 items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                  active:bg-red-500
                   >{{ page.name }}</a
                 >
               </div>
@@ -167,7 +164,7 @@ import {
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
 
-import { navigation } from "./NavBar.helpers";
+import { navigation, CATEGORY } from "./NavBar.helpers";
 
 const open = ref(false);
 </script>

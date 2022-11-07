@@ -26,3 +26,13 @@ export const navigation = {
   //   { name: "Stores", href: "#" },
   // ],
 };
+
+export const CategoryConstants = {
+  STARTERS: "STARTERS",
+  MAINCOURSES: "MAIN-COURSES",
+  SOUPS: "SOUPS",
+  DRINKS: "DRINKS",
+  DESSERT: "DESSERT",
+} as const;
+
+export const CATEGORY = Object.values(CategoryConstants);
