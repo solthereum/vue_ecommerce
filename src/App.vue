@@ -1,7 +1,32 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import type { IFoodItem } from "./@type";
+
+import { fetchMenuCollection } from "./api";
 import NavBar from "./components/NavBar/NavBar.vue";
-import HelloWorld from "./components/HelloWorld.vue";
+</script>
+<script lang="ts">
+export default {
+  data() {
+    return {
+      products: [] as IFoodItem[],
+    };
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const { data } = await fetchMenuCollection();
+        this.products = await data?.data?.menuCollection.items;
+        console.log({ list: this.products });
+      } catch (error) {
+        console.log("something wrong ...", error);
+      }
+    },
+  },
+  mounted() {
+    this.fetchData();
+  },
+};
 </script>
 
 <template>
@@ -12,7 +37,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   </nav> -->
   <NavBar />
 
-  <RouterView />
+  <RouterView :products="products" />
 </template>
 
 <style scoped>

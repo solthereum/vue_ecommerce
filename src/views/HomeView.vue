@@ -1,9 +1,18 @@
 <script setup lang="ts">
-import TheWelcome from "../components/TheWelcome.vue";
+import ProductBox from "../components/ProductBox/ProductBox.vue";
+</script>
+<script lang="ts">
+export default {
+  props: ["products"],
+  // data () {
+  //   return {
+  //    }
+  // }
+};
 </script>
 
 <template>
   <main>
-    <h1>Home page</h1>
+    <ProductBox :products="products"></ProductBox>
   </main>
 </template>

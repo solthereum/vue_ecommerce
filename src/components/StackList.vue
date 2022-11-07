@@ -11,8 +11,6 @@
   <p ref="wasRef">Hello Ref</p>
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-
 export interface IPeople {
   name: string;
   email: string;
@@ -25,7 +23,7 @@ export interface IPeople {
 // onMounted(function () {
 //   console.log("mounted");
 // });
-console.log('setuppp...')
+console.log("setuppp...");
 // export default {
 //   // data() {
 //   //   people
@@ -40,6 +38,4 @@ console.log('setuppp...')
 //   // }
 // };
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
