@@ -1,5 +1,5 @@
 export const queryMenuCollection = `{
-  menuCollection {
+    menuGaoVeGanCollection {
       items {
       foodName
       foodId
@@ -10,7 +10,7 @@ export const queryMenuCollection = `{
         url
         title
       }
-      option
+      options
     }
   }
 }`;

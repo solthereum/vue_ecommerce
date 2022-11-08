@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 
 import NavBar from "./components/NavBar/NavBar.vue";
-import { useProductStore } from "./stores/product";
+import { useProductStore } from "./stores/product/product";
 
 const productStore = useProductStore();
 const { products, fetchProductList } = productStore;

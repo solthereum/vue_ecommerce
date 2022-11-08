@@ -21,18 +21,16 @@ export const navigation = {
       name: "Drinks",
     },
   ],
-  // pages: [
-  //   { name: "Company", href: "#" },
-  //   { name: "Stores", href: "#" },
-  // ],
 };
 
 export const CategoryConstants = {
-  STARTERS: "STARTERS",
-  MAINCOURSES: "MAIN-COURSES",
-  SOUPS: "SOUPS",
-  DRINKS: "DRINKS",
-  DESSERT: "DESSERT",
+  vorspeise: "Vorspeise",
+  spezial_des_hauses: "Spezial Des Hauses",
+  nudeln_gerichte: "Nudeln Gerichte",
+  gerichte_mit_Reis: "Gerichte mit Reis",
+  drinks: "Drinks",
 } as const;
 
 export const CATEGORY = Object.values(CategoryConstants);
+
+export type TCategory = keyof typeof CategoryConstants;

@@ -1,16 +1,19 @@
-import { fetchMenuCollection } from "@/api";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-import type { IFoodItem } from "../@type";
+import type { IFoodItem } from "@/@type";
+import { fetchMenuCollection } from "@/api";
+
+import { categorizedProducts } from "./product.helpers";
 
 export const useProductStore = defineStore("productStore", () => {
-  const products = ref([] as IFoodItem[]);
+  const products = ref([] as IFoodItem[][]);
 
   const fetchProductList = async () => {
     try {
       const { data } = await fetchMenuCollection();
-      products.value = await data?.data?.menuCollection.items;
+      const productList = await data?.data?.menuGaoVeGanCollection.items;
+      products.value = categorizedProducts(productList);
     } catch (error) {
       console.log("something wrong ...", error);
     }
@@ -18,7 +21,6 @@ export const useProductStore = defineStore("productStore", () => {
 
   return {
     products,
-
     fetchProductList,
   };
 });

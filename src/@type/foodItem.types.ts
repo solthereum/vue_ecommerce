@@ -8,5 +8,5 @@ export interface IFoodItem {
     url: string;
     title: string;
   };
-  option: null;
+  options: null;
 }
