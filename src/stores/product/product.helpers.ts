@@ -1,4 +1,5 @@
-import type { IFoodItem } from "../../@type";
+import type { IFoodItem } from "@/@type";
+import { navigation } from "@/components/NavBar/NavBar.helpers";
 
 export const categorizedProducts = (products: IFoodItem[]) => {
   const productIdMapping = {} as Record<string, IFoodItem[]>;
@@ -11,5 +12,5 @@ export const categorizedProducts = (products: IFoodItem[]) => {
     productIdMapping[product.category].push(product);
   }
   console.log({ productIdMapping });
-  return Object.values(productIdMapping);
+  return navigation.categories.map((category) => productIdMapping[category.id]);
 };
