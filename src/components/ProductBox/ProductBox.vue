@@ -1,11 +1,12 @@
 <template>
   <div class="bg-white container">
-    <div class="mx-auto max-w-lg py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg -mt-8 px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col gap-6 mt-6">
         <div
           v-for="categoryProduct in products"
           :key="categoryProduct[0].foodId"
-          class="flex flex-col gap-6 mt-6"
+          class="flex flex-col gap-6 pt-16"
+          :id="categoryProduct[0].category"
         >
           <h2 class="text-2xl font-bold tracking-tight text-gray-900">
             {{ CategoryConstants[categoryProduct[0].category[0] as TCategory] }}
