@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white container">
+  <div class="bg-white lg:w-4/5">
     <ProductCategories :activeCategory="activeCategory"></ProductCategories>
-    <div class="mx-auto max-w-lg -mt-8 px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-6 mt-6">
+    <div class="mx-auto -mt-8 px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-6 mt-6 max-w-6xl">
         <div
           v-for="categoryProduct in products"
           :key="categoryProduct[0].foodId"
@@ -17,14 +17,12 @@
             v-for="product in categoryProduct"
             :key="product.foodId + product.priceOfFood"
             class="grid grid-cols-4 group relative divide-y divide-slate-200 w-full"
-            ref="refItem"
           >
             <ProductItem :product="product"></ProductItem>
           </div>
         </div>
       </div>
     </div>
-    <div ref="refDiv">ref Div</div>
   </div>
 </template>
 
@@ -40,8 +38,6 @@ import type { TCategory } from "../NavBar/NavBar.helpers";
 import ProductCategories from "./ProductCategories.vue";
 
 const productStore = useProductStore();
-const refDiv = ref(null);
-const refItem = ref(null);
 const categoryRef = ref(null);
 const { products } = storeToRefs(productStore);
 

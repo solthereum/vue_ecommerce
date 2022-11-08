@@ -2,7 +2,7 @@
   <header class="sticky -top-1 z-30 relative bg-white">
     <nav aria-label="Top" class="mx-auto max-w-7xl">
       <div class="border-b border-gray-200">
-        <div class="flex h-16 items-center justify-between">
+        <div class="flex h-16 items-center">
           <div class="ml-4 flex lg:ml-0">
             <span class="sr-only">Gao Vegan</span>
           </div>
