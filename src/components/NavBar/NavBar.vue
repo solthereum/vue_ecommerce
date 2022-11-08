@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-0 z-30 w-full bg-white">
+  <div class="w-full bg-white">
     <!-- Mobile menu -->
     <TransitionRoot as="template" :show="open">
       <Dialog as="div" class="relative z-40 lg:hidden" @close="open = false">
@@ -85,39 +85,10 @@
 
             <!-- Logo -->
             <div class="ml-4 flex lg:ml-0">
-              <span class="sr-only">Gao Vegan</span>
+              <span>Gao Vegan</span>
             </div>
 
-            <!-- Flyout menus -->
-            <PopoverGroup class="hidden lg:px-4 lg:block lg:self-stretch">
-              <div class="flex h-full">
-                <a
-                  v-for="page in navigation.categories"
-                  :key="page.name"
-                  :href="'#' + page.id"
-                  class="flex lg:px-4 items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                  active:bg-red-500
-                  >{{ page.name }}</a
-                >
-              </div>
-            </PopoverGroup>
             <div class="flex items-center">
-              <div
-                class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
-              >
-                <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
-                <a
-                  href="#"
-                  class="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >Sign in</a
-                >
-                <a
-                  href="#"
-                  class="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >Create account</a
-                >
-              </div>
-
               <!-- Search -->
               <div class="flex lg:ml-6">
                 <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
@@ -152,7 +123,6 @@
 import {
   Dialog,
   DialogPanel,
-  PopoverGroup,
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
@@ -164,7 +134,7 @@ import {
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
 
-import { navigation, CATEGORY } from "./NavBar.helpers";
+import { CATEGORY } from "./NavBar.helpers";
 
 const open = ref(false);
 </script>
