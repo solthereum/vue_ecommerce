@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white lg:w-4/5">
+  <div class="bg-neutral-50 lg:w-2/4 flex-auto">
     <ProductCategories :activeCategory="activeCategory"></ProductCategories>
-    <div class="mx-auto -mt-8 px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-6 mt-6 max-w-6xl">
+    <div class="mx-auto -mt-8 px-4 sm:px-6 lg:px-12">
+      <div class="flex flex-col gap-6 mt-6 max-w-4xl">
         <div
           v-for="categoryProduct in products"
           :key="categoryProduct[0].foodId"
@@ -16,7 +16,7 @@
           <div
             v-for="product in categoryProduct"
             :key="product.foodId + product.priceOfFood"
-            class="grid grid-cols-4 group relative divide-y divide-slate-200 w-full"
+            class="bg-white grid grid-cols-4 group relative divide-y divide-slate-200 w-full"
           >
             <ProductItem :product="product"></ProductItem>
           </div>

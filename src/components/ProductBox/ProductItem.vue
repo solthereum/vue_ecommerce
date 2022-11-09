@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none"
+    class="min-h-80 aspect-w-1 p-2 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none"
   >
     <img
       :src="product.foodImage.url"
@@ -8,7 +8,7 @@
       class="h-full w-full object-cover object-center lg:h-full lg:w-full"
     />
   </div>
-  <div class="container pl-4 col-span-3">
+  <div class="container p-2 col-span-3 flex flex-col justify-evenly lg:p-8">
     <div
       @click="addItemToCart"
       class="absolute top-0 right-0 z-10 cursor-pointer"

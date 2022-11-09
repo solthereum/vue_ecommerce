@@ -84,8 +84,8 @@
             </button>
 
             <!-- Logo -->
-            <div class="ml-4 flex lg:ml-0">
-              <span>Gao Vegan</span>
+            <div class="ml-8 flex font-bold">
+              <span>GaoVegan</span>
             </div>
 
             <div class="flex items-center">
@@ -99,13 +99,13 @@
 
               <!-- Cart -->
               <div class="ml-4 flow-root lg:ml-6">
-                <a href="#" class="group -m-2 flex items-center p-2">
+                <a href="#" class="group flex items-center p-2">
                   <ShoppingBagIcon
                     class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                     aria-hidden="true"
                   />
                   <span
-                    class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
+                    class="mx-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
                     >0</span
                   >
                   <span class="sr-only">items in cart, view bag</span>
