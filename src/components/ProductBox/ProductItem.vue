@@ -10,7 +10,7 @@
   </div>
   <div class="container p-2 col-span-3 flex flex-col justify-evenly lg:p-8">
     <div
-      @click="addItemToBasket(product)"
+      @click="addItemAction(product)"
       class="absolute top-0 right-0 z-10 cursor-pointer"
     >
       <svg
@@ -45,13 +45,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { IFoodItem } from "@/@type";
+import type { IProductItem } from "@/@type";
 import { useBasketStore } from "@/stores/basket/basket";
 
 const basketStore = useBasketStore();
-const { addItemToBasket } = basketStore;
+const { addItemAction } = basketStore;
 
-defineProps<{ product: IFoodItem }>();
+defineProps<{ product: IProductItem }>();
 </script>
 <script lang="ts"></script>
 

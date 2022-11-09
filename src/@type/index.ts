@@ -1,1 +1,1 @@
-export type { IFoodItem } from "./foodItem.types";
+export type { IProductItem, IProductItemInCart } from "./productItem.types";

@@ -1,8 +1,8 @@
-import type { IFoodItem } from "@/@type";
+import type { IProductItem } from "@/@type";
 import { navigation } from "@/components/NavBar/NavBar.helpers";
 
-export const categorizedProducts = (products: IFoodItem[]) => {
-  const productIdMapping = {} as Record<string, IFoodItem[]>;
+export const categorizedProducts = (products: IProductItem[]) => {
+  const productIdMapping = {} as Record<string, IProductItem[]>;
   if (!products) {
     return [];
   }

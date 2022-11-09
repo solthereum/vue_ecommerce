@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-import type { IFoodItem } from "@/@type";
+import type { IProductItem } from "@/@type";
 import { fetchMenuCollection } from "@/api";
 
 import { categorizedProducts } from "./product.helpers";
 
 export const useProductStore = defineStore("productStore", () => {
-  const products = ref([] as IFoodItem[][]);
+  const products = ref([] as IProductItem[][]);
 
   const fetchProductList = async () => {
     try {
