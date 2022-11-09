@@ -5,12 +5,22 @@
       <div
         class="flex items-center h-16 text-center full-w justify-center text-lg font-bold"
       >
-        This is the basket
+        Your Basket
       </div>
+      <BasketEmpty v-if="isBasketEmpty"></BasketEmpty>
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {};
+<script setup lang="ts">
+import { storeToRefs } from "pinia";
+
+import { useBasketStore } from "@/stores/basket/basket";
+
+import BasketEmpty from "./BasketEmpty.vue";
+
+const basketStore = useBasketStore();
+
+const { basketProductList, isBasketEmpty } = storeToRefs(basketStore);
 </script>
+
 <style></style>

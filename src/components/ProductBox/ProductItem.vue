@@ -10,7 +10,7 @@
   </div>
   <div class="container p-2 col-span-3 flex flex-col justify-evenly lg:p-8">
     <div
-      @click="addItemToCart"
+      @click="addItemToBasket(product)"
       class="absolute top-0 right-0 z-10 cursor-pointer"
     >
       <svg
@@ -35,7 +35,6 @@
         {{ product.foodName }}
         <!-- </a> -->
       </h3>
-      <!-- <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p> -->
     </div>
     <div>
       <p class="antialiased line-clamp-3">
@@ -47,11 +46,13 @@
 </template>
 <script setup lang="ts">
 import type { IFoodItem } from "@/@type";
+import { useBasketStore } from "@/stores/basket/basket";
+
+const basketStore = useBasketStore();
+const { addItemToBasket } = basketStore;
 
 defineProps<{ product: IFoodItem }>();
-const addItemToCart = (e: Event) => {
-  e.stopPropagation();
-  console.log("adding to cart");
-};
 </script>
+<script lang="ts"></script>
+
 <style></style>
