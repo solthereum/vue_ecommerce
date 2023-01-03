@@ -1,5 +1,5 @@
 <template>
-  <div class="md:w-80 max-w-xs p-4">
+  <div class="md:w-80 max-w-xs">
     <div class="fixed bottom-0 left-0 bg-white w-full z-20 md:sticky md:top-0">
       <!-- Header from table device -->
       <div
